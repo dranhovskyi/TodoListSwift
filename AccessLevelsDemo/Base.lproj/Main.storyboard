@@ -99,6 +99,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="64T-HX-luK" id="7Mt-Gj-rUb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="aTx-0G-8jL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -110,7 +111,7 @@
                     <navigationItem key="navigationItem" title="ToDo Items" id="N4Y-r7-9jk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fWg-1y-iFI">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="11w-jC-txL"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="AddItem" id="11w-jC-txL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,6 +139,9 @@
             <point key="canvasLocation" x="-798.46153846153845" y="61.848341232227483"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="11w-jC-txL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -33,13 +33,34 @@ class ItemTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let detailVC = segue.destination as! ViewController
+            if let selectedCell = sender as? ItemTableViewCell {
+                let indexPath = tableView.indexPath(for: selectedCell)!
+                let selectedItem = items[indexPath.row]
+                detailVC.item = selectedItem
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            
+        }
+    }
+    
     @IBAction func unwindToList(sender: UIStoryboardSegue) {
         let srcViewCon = sender.source as? ViewController
         let item = srcViewCon?.item
         if (srcViewCon != nil && item?.name != "") {
-            let newIndexPath = IndexPath(row: items.count, section: 0)
-            items.append(item!)
-            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                items[selectedIndexPath.row] = item!
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                let newIndexPath = IndexPath(row: items.count, section: 0)
+                items.append(item!)
+                tableView.insertRows(at: [newIndexPath], with: .bottom)
+            }
         }
     }
     

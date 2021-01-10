@@ -15,12 +15,21 @@ class ViewController : UIViewController {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        
+        let isInAddMode = presentingViewController is UINavigationController
+        if isInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let item = item {
+            nameTextField.text = item.name
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
