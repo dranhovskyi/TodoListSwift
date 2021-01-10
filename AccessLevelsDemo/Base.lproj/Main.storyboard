@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SxQ-CF-ei6">
-                                <rect key="frame" x="0.0" y="148" width="390" height="66.333333333333314"/>
+                                <rect key="frame" x="0.0" y="148" width="390" height="206.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TodoItem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWp-a2-XK0">
                                         <rect key="frame" x="159.33333333333334" y="0.0" width="71.333333333333343" height="20.333333333333332"/>
@@ -30,6 +30,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uk3-uI-ywt">
+                                        <rect key="frame" x="131" y="78.333333333333343" width="128" height="128"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KTQ-fq-ay3" secondAttribute="trailing" id="cGW-r7-AoK"/>
@@ -140,9 +143,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="11w-jC-txL"/>
+        <segue reference="aTx-0G-8jL"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="logo" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
