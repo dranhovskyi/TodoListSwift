@@ -13,8 +13,10 @@ class ItemTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         loadSampleItems()
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,6 +33,15 @@ class ItemTableViewController: UITableViewController {
         let item = items[indexPath.row]
         cell.nameLabel.text = item.name
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
